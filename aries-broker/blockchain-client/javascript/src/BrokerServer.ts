@@ -387,18 +387,18 @@ app.post('/queryAllTopics', async function (req, res) {
  app.get('/clearAll', async function (req, res) {
 
   // get a list of all existed credentials
-  let allRecords = await brokerAgent.agent.credentials.getAll()
+  let credentialRecords = await brokerAgent.agent.credentials.getAll()
 
   // delete all existed credentials
-  allRecords.forEach(async element => {
+  credentialRecords.forEach(async element => {
     await brokerAgent.agent.credentials.deleteById(element.id)
   })
 
   // get a list of all existed connections
-  allRecords = await brokerAgent.agent.connections.getAll()
+  let connectionRecords = await brokerAgent.agent.connections.getAll()
 
   // delete all existed connections
-  allRecords.forEach(async element => {
+  connectionRecords.forEach(async element => {
     await brokerAgent.agent.connections.deleteById(element.id)
   })
 

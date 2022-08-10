@@ -154,7 +154,7 @@ export class ClientInquirer extends BaseInquirer {
   public async sendInvitation(invitationUrl: string) {
     const reqBody = { invitationUrl }
     let response = await this.clientApi.connectToAgent(reqBody)
-    this.clientAgent.connected = true
+    this.clientAgent.waitForConnection()
     console.log(greenText(response.message))
   }
 
@@ -282,13 +282,13 @@ export class ClientInquirer extends BaseInquirer {
    * (ONLY USE FOR DEVELOPING AND TESTING PURPOSE)
    */
   public async clearAll() {
-    let allRecords = await this.clientAgent.agent.credentials.getAll()
-    allRecords.forEach(async element => {
+    let credentialRecords = await this.clientAgent.agent.credentials.getAll()
+    credentialRecords.forEach(async element => {
       await this.clientAgent.agent.credentials.deleteById(element.id)
     })
 
-    allRecords = await this.clientAgent.agent.connections.getAll()
-    allRecords.forEach(async element => {
+    let connectionRecords = await this.clientAgent.agent.connections.getAll()
+    connectionRecords.forEach(async element => {
       await this.clientAgent.agent.connections.deleteById(element.id)
     })
   }
