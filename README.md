@@ -65,6 +65,8 @@ Broker Network is used as a mediator for secure interactions between Client Netw
 ### Client
 Each Client Network will have an identity issued by Broker Network. It can then use this identity to transfer data to other network or get data from other network. The actions perform by this client will be verified based on the issued identity.
 
+**_To connect Client to a Broker Server, you need to change variable `brokerServer` in file `aries-client/blockchain-client/broker-api/axiosClient.js` to the domain name or IP address of the corresponding Broker Server_**
+
 ## More Resources
 * [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.2/)
 * [Hyperledger Aries](https://github.com/hyperledger/aries)
