@@ -154,7 +154,7 @@ export class ClientInquirer extends BaseInquirer {
   public async sendInvitation(invitationUrl: string) {
     const reqBody = { invitationUrl }
     let response = await this.clientApi.connectToAgent(reqBody)
-    this.clientAgent.waitForConnection()
+    await this.clientAgent.waitForConnection()
     console.log(greenText(response.message))
   }
 
