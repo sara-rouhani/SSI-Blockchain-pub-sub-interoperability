@@ -4,6 +4,7 @@
 
 import type {
   BasicMessageStateChangedEvent,
+  CredentialExchangeRecord,
   CredentialStateChangedEvent,
   ProofStateChangedEvent,
 } from '@aries-framework/core'
@@ -21,7 +22,7 @@ import {
 } from '@aries-framework/core'
 import { ui } from 'inquirer'
 
-import { purpleText } from './OutputClass'
+import { Color, purpleText } from './OutputClass'
 
 export class Listener {
   public on: boolean        // whether connected to Broker's agent or not
@@ -41,6 +42,23 @@ export class Listener {
   }
 
   /**
+   * This function previews the recieved credential
+   * 
+   * @param credentialRecord credential record to be previewed
+   */
+  private printCredentialAttributes(credentialRecord: CredentialExchangeRecord) {
+    if (credentialRecord.credentialAttributes) {
+      const attribute = credentialRecord.credentialAttributes
+      console.log('\n\nCredential preview:')
+      attribute.forEach((element) => {
+        console.log(purpleText(`${element.name} ${Color.Reset}${element.value}`))
+      })
+    }
+  }
+
+
+
+  /**
    * This function listening for credential offered by Broker's agent
    * 
    * @param clientAgent client's agent
@@ -49,10 +67,8 @@ export class Listener {
     clientAgent.agent.events.on(
       CredentialEventTypes.CredentialStateChanged,
       async ({ payload }: CredentialStateChangedEvent) => {
-        if (payload.credentialRecord.state === CredentialState.OfferReceived) {
-          this.turnListenerOn()
-          await clientAgent.acceptCredentialOffer(payload.credentialRecord)
-          this.turnListenerOff()
+        if (payload.credentialRecord.state === CredentialState.RequestSent) {
+          this.printCredentialAttributes(payload.credentialRecord)
         }
       }
     )

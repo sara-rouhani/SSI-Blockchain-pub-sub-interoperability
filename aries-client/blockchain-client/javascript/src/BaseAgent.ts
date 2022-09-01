@@ -42,7 +42,7 @@ export class BaseAgent {
       ],
       endpoints: [`http://${this.ipAddr}:${this.port}`],
       autoAcceptConnections: true,
-      autoAcceptCredentials: AutoAcceptCredential.ContentApproved,
+      autoAcceptCredentials: AutoAcceptCredential.Always,
       autoAcceptProofs: AutoAcceptProof.ContentApproved
     }
 

@@ -107,16 +107,6 @@ export class ClientAgent extends BaseAgent {
     return connection
   }
 
-  /**
-   * This function will accept credential offered by Broker
-   * 
-   * @param credentialRecord credential offered by Broker
-   */
-  public async acceptCredentialOffer(credentialRecord: CredentialExchangeRecord) {
-    await this.agent.credentials.acceptOffer({
-      credentialRecordId: credentialRecord.id,
-    })
-  }
 
   /**
    * This function will accept proof requested by Broker

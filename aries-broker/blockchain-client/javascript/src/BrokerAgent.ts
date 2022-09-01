@@ -58,7 +58,7 @@ export class BrokerAgent extends BaseAgent {
    */
   private async waitForConnection(connectionRecord: ConnectionRecord) {
     connectionRecord = await this.agent.connections.returnWhenIsConnected(connectionRecord.id)
-    console.log(greenText(Output.ConnectionEstablished))
+    console.log(greenText("\n"+Output.ConnectionEstablished+"\n"))
     return connectionRecord.id
   }
 
@@ -246,7 +246,7 @@ export class BrokerAgent extends BaseAgent {
   public async sendProofRequest(attributeName: string) {
     const connectionRecord = await this.getConnectionRecord()
     const proofAttribute = await this.newProofAttribute(attributeName)
-    console.log(greenText('\nRequesting proof...\n', false))
+    console.log(greenText('Requesting proof...', false))
     let proofRecord = await this.agent.proofs.requestProof(connectionRecord.id, {
       requestedAttributes: proofAttribute,
     })
@@ -264,7 +264,7 @@ export class BrokerAgent extends BaseAgent {
     const getProofRecord = () =>
       new Promise<ProofRecord>((resolve, reject) => {
         console.log(greenText('Waiting for proof to be accepted'))
-        const timeoutId = setTimeout(() => resolve(proofRecord), 20000)
+        const timeoutId = setTimeout(() => resolve(proofRecord), 7000)
         this.agent.events.on<ProofStateChangedEvent>(ProofEventTypes.ProofStateChanged, (e) => {
           if (e.payload.proofRecord.state == ProofState.Done && e.payload.proofRecord.connectionId === this.connectionRecordClientId) return
           clearTimeout(timeoutId)
@@ -283,7 +283,7 @@ export class BrokerAgent extends BaseAgent {
     let credAccepted = false
     const getCredentialRecord = () =>
       new Promise<CredentialExchangeRecord>((resolve, reject) => {
-        console.log(greenText('Waiting for credentials to be accepted'))
+        console.log(greenText('\nWaiting for credentials to be accepted'))
         // Timeout of 20 seconds
         const timeoutId = setTimeout(() => reject(new Error(redText('No credential record set'))), 20000)
 
