@@ -77,4 +77,4 @@ Each Client Network will have an identity issued by Broker Network. It can then 
 * Thanks to my team members who contributed significantly to this project:
     * Minh Nam Hai Nguyen
     * Sahilpreet Singh Sidhu
-    * Chika Ngene
+    * Chikamnaele Ngene

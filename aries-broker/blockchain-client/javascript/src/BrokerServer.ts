@@ -1,5 +1,5 @@
 /**
- * Authors: Hai Nguyen, Sahilpreet Singh Sidhu, Chika Ngene
+ * Authors: Hai Nguyen, Sahilpreet Singh Sidhu, Chikamnaele Ngene
  * Supervisor: Sara Rouhani
  * 
  * REMARKS: Broker server listening for request from clients, giving verifications and doing authentications with 

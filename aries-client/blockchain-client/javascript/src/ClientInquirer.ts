@@ -1,5 +1,5 @@
 /**
- * Authors: Hai Nguyen, Sahilpreet Singh Sidhu, Chika Ngene
+ * Authors: Hai Nguyen, Sahilpreet Singh Sidhu, Chikamnaele Ngene
  * Supervisor: Sara Rouhani
  * 
  * REMARKS: Client app to connect with Broker server in order to connect client's agent with Broker's agent for 

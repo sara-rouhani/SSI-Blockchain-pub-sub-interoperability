@@ -42,7 +42,7 @@ export class Listener {
   }
 
   /**
-   * This function previews the recieved credential
+   * This function previews the received credential
    * 
    * @param credentialRecord credential record to be previewed
    */
