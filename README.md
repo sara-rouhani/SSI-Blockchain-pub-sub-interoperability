@@ -70,7 +70,7 @@ Each Client Network will have an identity issued by Broker Network. It can then 
 ## More Resources
 * [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.2/)
 * [Hyperledger Aries](https://github.com/hyperledger/aries)
-* [Link to the paper of this project](SSI.pdf)
+* [Paper of this project](SSI.pdf)
 
 ## Authors and Acknowledgement
 * Thanks to Professor Sara Rouhani for your guidance
