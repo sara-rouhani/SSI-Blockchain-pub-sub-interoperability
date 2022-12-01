@@ -40,11 +40,11 @@ Download the latest version of the [cURL](https://curl.se/download.html) tool if
 After Brinaries and Docker Images are installed, you can go ahead and bring up the network by moving to `blockchain-client/` directory and execute the following commands:
 * Broker Network
     ```
-    /.startFabric.sh javascript
+    ./startFabric.sh javascript
     ```
 * Client Network
     ```
-    /.startFabric.sh javascript
+    ./startFabric.sh javascript
     ```
 
 ### Install NodeJS dependencies and run the app
