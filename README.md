@@ -2,7 +2,7 @@
 
 ### This project attempt to build secure interactions between blockchain networks. We use Hyperledger Fabric (HF) for blockchain networks and Hyperledger Aries (HA) for Self Soverign Identity (SSI)
 
-## Getting Started
+## Getting Started (Debian 11)
 
 ### Prerequisites
 
