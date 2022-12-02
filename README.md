@@ -13,9 +13,6 @@ Download the latest version of the [cURL](https://curl.se/download.html) tool if
 * [Docker](https://www.docker.com/products/docker-desktop/) version 17.06.2-ce or greater is required
 * [Docker Compose](https://docs.docker.com/compose/install/) version 1.14.0 or greater is required
 
-**Install Go Programming Language**  
-[Go](https://go.dev/dl/) version 1.14 or greater is required
-
 **Install NodeJS and npm**
 * [NodeJS](https://nodejs.org/en/download/) version 12.22.12 or greater is required
 * [npm](https://nodejs.org/en/download/) version 7.5.2 or greater is required
