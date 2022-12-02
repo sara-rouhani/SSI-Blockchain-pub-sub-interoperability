@@ -20,6 +20,9 @@ Download the latest version of the [cURL](https://curl.se/download.html) tool if
 * [NodeJS](https://nodejs.org/en/download/) version 12.22.12 or greater is required
 * [npm](https://nodejs.org/en/download/) version 7.5.2 or greater is required
 
+**Install indy-sdk**  
+Download indy-sdk by following [this instruction](https://aries.js.org/guides/getting-started/installation/nodejs/linux)
+
 ### Bring up HF blockchain
 **Install Binaries and Docker Images**
 * Move to the directory of the network you want to bring up:
